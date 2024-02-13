@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>YOu YOu</h1>
+
+
+    <script>
+        // const p1 = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve("Promise resolved value 1")
+        //     }, 20000);
+        // })
+        // const p2 = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve("Promise resolved value 2")
+        //     }, 40000);
+        // })
+
+        // handling function using async await
+
+        // await can only be used inside an async function
+        // here the code was waiting at line number 20
+
+        // async function handlePromise()
+        // {
+        //     console.log("hello world");
+        //     // JS engine was waiting for promise to be resolved
+        //     const val = await p1
+        //     console.log("la la laaa 1");
+        //     console.log(val)  
+
+        //     const val2 = await p2
+        //     console.log("la la laaa 2");
+        //     console.log(val2) 
+        // }
+        // handlePromise()
+
+
+        // normally handling functions
+        // js engine will not wait for promise to be resolved 
+        // function getdata(){
+        //     p.then((res) => console.log(res))
+
+        //     console.log("javascript")
+        // }
+        // getdata()
+
+
+
+
+        // *************FETCH METHOD*************
+
+
+        const API_URl = "https://api..com/users/hiteshchaudhary"
+
+        async function handlePromise() {
+            // to handle error if api is invalid or something 
+            try {
+                const data = await fetch(API_URl)
+                const jsonValue = await data.json()
+                console.log(jsonValue);
+            } catch (error) {
+                console.log("api is failed",error)
+            }
+            // fetch() => Response.json() => jsonvalue
+        }
+
+        // another method to handle error is catch
+        // handlePromise().catch((err) => console.log(err))
+        handlePromise()
+    </script>
+</body>
+
+</html>
